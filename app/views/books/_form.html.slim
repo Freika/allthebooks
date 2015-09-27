@@ -1,0 +1,14 @@
+= simple_form_for(@book) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :author
+    = f.input :publisher
+    = f.input :year
+    = f.input :link
+    = f.input :description
+    = f.input :slug
+
+  .form-actions
+    = f.button :submit
