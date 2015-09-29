@@ -13,6 +13,8 @@ gem 'friendly_id'
 gem 'babosa'
 gem 'devise'
 gem 'figaro'
+gem 'omniauth-facebook'
+
 group :development, :test do
   gem 'byebug'
 end

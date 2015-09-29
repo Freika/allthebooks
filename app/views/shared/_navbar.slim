@@ -37,8 +37,11 @@ nav.navbar.navbar-default role="navigation"
           input.form-control placeholder="Search" type="text"
         button.btn.btn-default type="submit"  Submit
       ul.nav.navbar-nav.navbar-right
-        li
-          a href="#"  Link
+        - if user_signed_in?
+          li = link_to 'Logout', destroy_user_session_path, method: :delete
+        - else
+          li = link_to 'Sign in', new_user_session_path
+          li = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" href="#"
             | Dropdown
