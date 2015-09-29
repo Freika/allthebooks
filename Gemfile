@@ -12,7 +12,7 @@ gem 'simple_form'
 gem 'friendly_id'
 gem 'babosa'
 gem 'devise'
-
+gem 'figaro'
 group :development, :test do
   gem 'byebug'
 end
