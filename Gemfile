@@ -11,6 +11,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'simple_form'
 gem 'friendly_id'
 gem 'babosa'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
