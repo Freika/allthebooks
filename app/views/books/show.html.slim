@@ -17,6 +17,5 @@
     = render_cover(@book)
 
 
-- if user_signed_in?
-  .col-md-8
-    = render partial: 'the_comments/tree', locals: { commentable: @book, comments_tree: @comments }
+.col-md-8
+  = render partial: 'the_comments/tree', locals: { commentable: @book, comments_tree: @comments }
