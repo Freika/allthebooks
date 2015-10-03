@@ -13,7 +13,7 @@
   .comments
     - @comments.each do |comment|
       - klass = { published: :primary, draft: :warning, deleted: :danger }[comment.state.to_sym]
-      .panel  class: "panel-#{klass}"  
+      .panel  class: "panel-#{klass}"
         .panel-heading= comment.title
         .panel-body
           = render partial: 'the_comments/slim/comment_edit', locals: { comment: comment }
@@ -21,5 +21,5 @@
 
           = render partial: 'the_comments/slim/manage_controls', locals: { comment: comment }
           = render partial: 'the_comments/slim/additional_info', locals: { comment: comment }
-        
+
   = paginate @comments

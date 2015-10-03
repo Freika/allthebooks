@@ -7,7 +7,7 @@ nav.navbar.navbar-default role="navigation"
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand href="#"  Brand
+      = link_to 'All the Books', root_path, class: 'navbar-brand'
     /! Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
@@ -41,7 +41,10 @@ nav.navbar.navbar-default role="navigation"
           li = link_to 'Logout', destroy_user_session_path, method: :delete
         - else
           li = link_to 'Sign in', new_user_session_path
-          li = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
+          li
+            a href='#' type="button" data-toggle="modal" data-target=".bs-example-modal-sm" Войти
+
+          / li = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" href="#"
             | Dropdown

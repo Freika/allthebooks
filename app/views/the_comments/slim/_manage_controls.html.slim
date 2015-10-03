@@ -9,7 +9,7 @@
     - opts    = { remote: true, style: to_hide, method: :post }
     = link_to [:to_published, comment], opts.merge(class: "btn btn-primary to_published") do
       = t('the_comments.to_published')
-    
+
     - to_hide = comment.draft? ? hidden : nil
     - opts    = { remote: true, style: to_hide, method: :post }
     = link_to [:to_draft, comment], opts.merge(class: "btn btn-warning to_draft") do

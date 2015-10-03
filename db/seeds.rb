@@ -1,4 +1,19 @@
-Book.create(title: 'Программирование на языке Ruby',
+def create_or_update_book(book)
+  book = Book.find_by(title: book[:title])
+  if book.nil?
+    book = book.create!(book)
+    puts ">>>> Добавлена новая книга: #{book[:title]}"
+  elsif book.attributes == book
+    puts "Существующая книга не изменена: #{book[:title]}"
+  else
+    book.update_attributes(book)
+    puts "Обновлена существующая << КНИГА >>: #{book[:title]}"
+  end
+  return book
+end
+
+
+create_or_update_book(title: 'Программирование на языке Ruby',
             author: 'Хэл Фултон',
             publisher: 'ДМК Пресс',
             year: '2015',

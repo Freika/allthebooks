@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   # layout 'admin'
 
   # Define your restrict methods and use them like this:
