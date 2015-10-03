@@ -1,0 +1,6 @@
+.modal.fade.row.bs-example-modal-sm tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h2 Войти или зарегистрироваться
+      = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)

@@ -15,6 +15,10 @@ gem 'devise'
 gem 'figaro'
 gem 'omniauth-facebook'
 
+gem 'the_comments', '~> 2.2.1'
+gem 'awesome_nested_set'
+gem 'haml'
+
 group :development, :test do
   gem 'byebug'
 end
