@@ -1,22 +1,22 @@
-def create_or_update_book(book)
-  book = Book.find_by(title: book[:title])
+def create_or_update_book(book_attrs)
+  book = Book.find_by(title: book_attrs[:title])
   if book.nil?
-    book = book.create!(book)
-    puts ">>>> Добавлена новая книга: #{book[:title]}"
-  elsif book.attributes == book
-    puts "Существующая книга не изменена: #{book[:title]}"
+    book = book.create!(book_attrs)
+    puts ">>>> Создана новая книга: #{book_attrs[:title]}"
+  elsif book.attributes == book_attrs
+    puts "Существующая книга не изменена: #{book_attrs[:title]}"
   else
-    book.update_attributes(book)
-    puts "Обновлена существующая << КНИГА >>: #{book[:title]}"
+    book.update_attributes(book_attrs)
+    puts "Обновлена существующая << КНИГА >>: #{book_attrs[:title]}"
   end
   return book
 end
-
 
 create_or_update_book(title: 'Программирование на языке Ruby',
             author: 'Хэл Фултон',
             publisher: 'ДМК Пресс',
             year: '2015',
+            cover: 'ruby/programmirovanie-na-yazike-ruby',
             description: 'Ruby – относительно новый объектно-ориентированный язык, разработанный Юкихиро Мацумото в 1995 году и позаимствовавший некоторые особенности у языков LISP, Smalltalk, Perl, CLU и других. Язык активно развивается и применяется в самых разных областях: от системного администрирования до разработки сложных динамических сайтов.
 
 Книга является полноценным руководством по Ruby – ее можно использовать и как учебник, и как справочник, и как сборник ответов на вопросы типа «как сделать то или иное в Ruby». В ней приведено свыше 400 примеров, разбитых по различным аспектам программирования, и к которым автор дает обстоятельные комментарии.

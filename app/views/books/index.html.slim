@@ -2,6 +2,6 @@
   .row
     .col-sm-6.col-md-3
       .thumbnail
-        = image_tag('http://lorempixel.com/output/abstract-h-c-250-355-1.jpg')
+        = render_cover(book)
         h5 = book.author
         h3 = link_to book.title, book
