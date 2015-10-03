@@ -15,3 +15,7 @@
 .col-md-4
   .pull-right
     = image_tag('http://lorempixel.com/output/abstract-h-c-250-355-1.jpg')
+
+
+.col-md-12
+  = render partial: 'the_comments/tree', locals: { commentable: @book, comments_tree: @comments }
