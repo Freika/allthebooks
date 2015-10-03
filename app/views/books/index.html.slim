@@ -1,7 +1,7 @@
-- @books.each do |book|
-  .row
-    .col-sm-6.col-md-3
-      .thumbnail
-        = render_cover(book)
-        h5 = book.author
-        h3 = link_to book.title, book
+.row
+  - @books.each do |book|
+      .col-sm-6.col-md-3
+        .thumbnail
+          = render_cover(book)
+          h5 = book.author
+          h3 = link_to book.title, book
